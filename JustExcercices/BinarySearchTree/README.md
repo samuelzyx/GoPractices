@@ -1,0 +1,1 @@
+A Binary Search Tree (BST) is a hierarchical data structure where each node has, at most, two child nodes. The left child node contains values smaller than the parent,
