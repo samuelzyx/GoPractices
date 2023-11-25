@@ -45,6 +45,30 @@ func (o Ocurrence) GetResponse() string {
 	return fmt.Sprintf("%s", strings.Join(out, ", "))
 }
 
+type Assignment1 struct {
+	Words        []string           `json:"words"`
+	Percentages  map[string]float32 `json:"percentages"`
+	Special      []any              `json:"special"`
+	ExtraSpecial []any              `json:"extraSpecial"`
+}
+
+func (a Assignment1) GetResponse() string {
+	outPercentages := []string{}
+	for word, percentage := range a.Percentages {
+		outPercentages = append(outPercentages, fmt.Sprintf("%s (%v)", word, percentage))
+	}
+	outSpecial := []string{}
+	for special := range a.Special {
+		outSpecial = append(outSpecial, fmt.Sprintf("%v", special))
+	}
+	outExtraSpecial := []string{}
+	for extraSpecial := range a.ExtraSpecial {
+		outExtraSpecial = append(outExtraSpecial, fmt.Sprintf("%v", extraSpecial))
+	}
+	return fmt.Sprintf("Words: %s, Percentages: %s, Special: %s, ExtraSpecial: %s",
+		strings.Join(a.Words, ", "), strings.Join(outPercentages, ", "), strings.Join(outSpecial, ", "), strings.Join(outExtraSpecial, ", "))
+}
+
 func (a API) DoGetRequest(requstURL string) (Response, error) {
 	if _, err := url.ParseRequestURI(requstURL); err != nil {
 		fmt.Printf("URL is invalid format: %s\n", err)
@@ -91,6 +115,19 @@ func (a API) DoGetRequest(requstURL string) (Response, error) {
 	}
 
 	switch page.Name {
+	case "assignment1":
+		var assignment1 Assignment1
+		err = json.Unmarshal(body, &assignment1) //body: data []byte, &words v any pointer reference
+		if err != nil {
+			return nil, RequestError{
+				HTTPCode: response.StatusCode,
+				Body:     string(body),
+				Err:      fmt.Sprintf("Word unmarshal error: %s\n", err),
+			}
+		}
+
+		return assignment1, nil
+
 	case "words":
 		var words Words
 		err = json.Unmarshal(body, &words) //body: data []byte, &words v any pointer reference
