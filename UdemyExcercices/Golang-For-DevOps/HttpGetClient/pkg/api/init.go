@@ -1,6 +1,9 @@
 package api
 
-import "net/http"
+import (
+	"io"
+	"net/http"
+)
 
 type Options struct {
 	Password string
@@ -9,6 +12,7 @@ type Options struct {
 
 type ClientIFace interface {
 	Get(url string) (resp *http.Response, err error)
+	Post(url string, contentType string, body io.Reader) (resp *http.Response, err error)
 }
 
 type APIIFace interface {
@@ -25,9 +29,10 @@ func New(options Options) APIIFace {
 		Options: options,
 		Client: &http.Client{
 			Transport: &MyJWTTransport{
-				Transport: http.DefaultTransport,
-				Password:  options.Password,
-				LoginURL:  options.LoginURL,
+				Transport:  http.DefaultTransport,
+				Password:   options.Password,
+				LoginURL:   options.LoginURL,
+				HTTPClient: &http.Client{},
 			},
 		},
 	}
