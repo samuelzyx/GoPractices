@@ -3,9 +3,10 @@ package main
 import (
 	"flag"
 	"fmt"
-	"net/http"
 	"net/url"
 	"os"
+
+	"github.com/samuelzyx/GoPractices/tree/main/UdemyExcercices/Golang-For-DevOps/HttpGetClient/pkg/api"
 )
 
 func main() {
@@ -32,38 +33,18 @@ func main() {
 		LoginURL: parsedURL.Scheme + "://" + parsedURL.Host + "/login",
 	})
 
-	if password != "" {
-		token, err := apiInstance.DoLoginRequest(parsedURL.Scheme+"://"+parsedURL.Host+"/login", password)
-		if err != nil {
-			if requestErr, ok := err.(api.RequestError); ok {
-				fmt.Printf("Error: %s (HTTP Code: %d, Body: %s)\n", requestErr.Err, requestErr.HTTPCode, requestErr.Body)
-				os.Exit(1)
-			}
-			fmt.Printf("Error: %s\n", err)
-			os.Exit(1)
-		}
-		client.Transport = MyJWTTransport{
-			Transport: http.DefaultTransport,
-			Token:     token,
-		}
-		//fmt.Printf("Token: %s\n", token)
-		//os.Exit(1)
-	}
-
-	res, err := doRequest(client, parsedURL.String())
+	res, err := apiInstance.DoGetRequest(parsedURL.String())
 	if err != nil {
-		if requestErr, ok := err.(RequestError); ok {
-			fmt.Printf("Error: %s (HTTP Code: %d, Body: %s)\n", requestErr.Err, requestErr.HTTPCode, requestErr.Body)
+		if requestErr, ok := err.(api.RequestError); ok {
+			fmt.Printf("Error occurred: %s (HTTP Error: %d, Body: %s)\n", requestErr.Error(), requestErr.HTTPCode, requestErr.Body)
 			os.Exit(1)
 		}
-		fmt.Printf("Error: %s\n", err)
+		fmt.Printf("Error occurred: %s\n", err)
 		os.Exit(1)
 	}
-
 	if res == nil {
 		fmt.Printf("No response\n")
 		os.Exit(1)
 	}
-
 	fmt.Printf("Response: %s\n", res.GetResponse())
 }
