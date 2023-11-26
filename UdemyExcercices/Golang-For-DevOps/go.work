@@ -1,0 +1,6 @@
+go 1.21.4
+
+use (
+./HttpGetClient/cmd/http-login-pack
+./HttpGetClient/pkg/api
+)
