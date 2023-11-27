@@ -20,12 +20,15 @@ func hourglassSum(arr [][]int32) int32 {
 	// Write your code here
 	// MaxSum record
 	var maxSum int32 = -99999999
-	// For to iterate in y
+	// For to iterate in y (max 4)
 	for y := 0; y < 4; y++ {
-		// For to iterate in x
+		// For to iterate in x (max 4)
 		for x := 0; x < 4; x++ {
 			var tempSum int32
-			// Sum according hourglass form [00, 01, 02, 11, 20, 21, 22]
+			// Sum according hourglass form:
+			// [00, 01, 02,
+			//		11,
+			//	20, 21, 22]
 			tempSum = arr[x][y] + arr[x][y+1] + arr[x][y+2] + arr[x+1][y+1] + arr[x+2][y] + arr[x+2][y+1] + arr[x+2][y+2]
 			fmt.Println(tempSum)
 
