@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"io"
 	"os"
+	"strconv"
 	"strings"
 )
 
@@ -17,7 +18,32 @@ import (
 
 func timeConversion(s string) string {
 	// Write your code here
-
+	// Check if is PM or AM
+	isPM := strings.Contains(s, "PM")
+	isAM := strings.Contains(s, "AM")
+	getHour, _ := strconv.Atoi(s[0:2])
+	getRest := s[2:8] // substring [:mm:ss]
+	// If is PM
+	if isPM {
+		if getHour == 12 {
+			// If is PM 12:00:00 it will be 12:00:00
+			return "12" + getRest // concat [:mm:ss]
+		} else {
+			// Add to 12 to hours
+			getHour += 12
+			// If is AM or PM remove (AM/PM) substring
+			return strconv.Itoa(getHour) + getRest // concat [:mm:ss]
+		}
+	}
+	if isAM {
+		// If is AM 12:00:00 it will be 00:00:00
+		if getHour == 12 {
+			// If is PM 12:00:00 it will be 12:00:00
+			return "00" + getRest // concat [:mm:ss]
+		}
+	}
+	// If is AM or PM remove (AM/PM) substring
+	return "0" + strconv.Itoa(getHour) + getRest // concat [:mm:ss]
 }
 
 func main() {
