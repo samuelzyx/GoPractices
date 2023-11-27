@@ -23,14 +23,14 @@ func plusMinus(arr []int32) {
 	negativeNum := 0
 	// Count how many zeros we have in the array
 	zeroNum := 0
-	for e := range arr {
-		if e == 0 {
+	for _, num := range arr {
+		if num == 0 {
 			zeroNum++
 		}
-		if e < 0 {
+		if num < 0 {
 			negativeNum++
 		}
-		if e > 0 {
+		if num > 0 {
 			positiveNum++
 		}
 	}
