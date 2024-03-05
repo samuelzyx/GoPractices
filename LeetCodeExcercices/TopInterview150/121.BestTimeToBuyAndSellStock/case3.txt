@@ -1,0 +1,10 @@
+Case 3
+
+Input
+prices = [1,2]
+
+Output
+1
+
+Expected
+1
