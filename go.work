@@ -1,6 +1,0 @@
-go 1.21.4
-
-use (
-    ./UdemyExcercices/Golang-For-DevOps/HttpGetClient/pkg/api
-    ./UdemyExcercices/Golang-For-DevOps/HttpGetClient/cmd/http-login-pack
-)
