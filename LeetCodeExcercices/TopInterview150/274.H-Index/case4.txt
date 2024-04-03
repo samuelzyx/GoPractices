@@ -1,0 +1,8 @@
+Input
+citations = [0]
+
+Output
+0
+
+Expected
+0
