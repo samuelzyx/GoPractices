@@ -42,6 +42,8 @@ How can we have the type of an object?
 - Using package fmt with the %T format in the sintaxis of the print: fmt.Printf("Type of variable: %T\n",variable) //Output: Type of variable: string
 - Using package reflect: reflect.TypeOf(variable)
 - Using assertions we can have a boolean that the conversion is was successful or not   
+	s, ok := i.(string)
+	fmt.Println(s, ok)
 
 Where we will use square breakers or curly breakers?
 
@@ -60,7 +62,10 @@ What are tags and the purpose of them?
 How you can compare two objects in golang?
 
 - We can use comparison oparators like equals == , not equals !=, less than <, great than > and so on.
-- We can compare arrays with reflect deepEquals function to compare each value of the array
+- We can compare arrays with reflect.DeepEqual() function to compare each value of the array
+   Syntax: func DeepEqual(x, y interface{}) bool
+   Parameters: This function takes two parameters with value of any type, i.e. x, y.
+   Return Value: This function returns the boolean value. 
 - We can use for loops in order to compare each value from same length size or slices or arrays
 - We can use == operator with structs comparing each field with the other field of the struct
 
