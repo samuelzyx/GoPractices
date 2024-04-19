@@ -1,0 +1,44 @@
+Case 3
+
+Input
+ratings = [1,3,2,2,1]
+
+Output
+7
+
+Expected
+7
+
+Stdout
+TotalCandys:1
+
+CurrentRating:1
+NextRating:3
+CurrentRating > NextRating
+Increment upDiff:1
+downDiff 0:0
+Peak equals upDiff:1
+Increment totalCandies 1+upDiff:3
+
+CurrentRating:3
+NextRating:2
+CurrentRating < NextRating
+upDiff 0:0
+Increment downDiff:1
+Increment totalCandies 1+downDiff:5
+If peak>=downDiff, Decrement totalCandies:4
+
+CurrentRating:2
+NextRating:2
+CurrentRating == NextRating
+Increment totalCandies:5
+
+CurrentRating:2
+NextRating:1
+CurrentRating < NextRating
+upDiff 0:0
+Increment downDiff:1
+Increment totalCandies 1+downDiff:7
+
+CurrentRating:1
+TotalCandys:7

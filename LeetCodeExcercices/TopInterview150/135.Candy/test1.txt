@@ -1,0 +1,31 @@
+Case 1
+
+input
+ratings = [1,0,2]
+
+Output
+5
+
+Expected
+5
+
+Stdout
+TotalCandys:1
+
+CurrentRating:1
+NextRating:0
+CurrentRating < NextRating
+upDiff 0:0
+Increment downDiff:1
+Increment totalCandies 1+downDiff:3
+
+CurrentRating:0
+NextRating:2
+CurrentRating > NextRating
+Increment upDiff:1
+downDiff 0:0
+Peak equals upDiff:1
+Increment totalCandies 1+upDiff:5
+
+CurrentRating:2
+TotalCandys:5
