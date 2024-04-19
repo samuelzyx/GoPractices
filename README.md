@@ -1,4 +1,4 @@
-# Go Dev Practices
+# Go Dev Practices by Chilabrox (Samuelzyx)
 
 For Developers Practice coding, prepare for interviews, and get hired.
 
