@@ -1,0 +1,31 @@
+Test 2 (Passed)
+
+Input
+queries:
+[["EXISTS","0"], 
+ ["EXISTS","10"], 
+ ["ADD","2"], 
+ ["ADD","3"], 
+ ["ADD","9"], 
+ ["EXISTS","3"], 
+ ["EXISTS","4"], 
+ ["EXISTS","9"], 
+ ["EXISTS","10"], 
+ ["ADD","10"], 
+ ["ADD","0"], 
+ ["EXISTS","0"], 
+ ["EXISTS","1"], 
+ ["EXISTS","2"], 
+ ["EXISTS","3"], 
+ ["EXISTS","4"], 
+ ["EXISTS","9"], 
+ ["EXISTS","10"], 
+ ["EXISTS","11"]]
+
+Expected return value
+["false", "false", "", "", "", "true", "false", "true", "false", "", "", 
+"true", "false", "true", "true", "false", "true", "true", "false"]
+
+Your return value
+["false", "false", "", "", "", "true", "false", "true", "false", "", "", 
+"true", "false", "true", "true", "false", "true", "true", "false"]

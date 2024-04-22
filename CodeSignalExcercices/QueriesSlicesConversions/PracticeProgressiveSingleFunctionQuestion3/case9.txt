@@ -1,0 +1,49 @@
+queries:
+[["ADD","0"], 
+ ["ADD","1"], 
+ ["ADD","1"], 
+ ["ADD","11"], 
+ ["ADD","22"], 
+ ["ADD","3"], 
+ ["ADD","5"], 
+ ["GET_NEXT","0"], 
+ ["GET_NEXT","1"], 
+ ["REMOVE","1"], 
+ ["GET_NEXT","1"], 
+ ["ADD","0"], 
+ ["ADD","1"], 
+ ["ADD","2"], 
+ ["ADD","1"], 
+ ["GET_NEXT","1"], 
+ ["GET_NEXT","2"], 
+ ["GET_NEXT","3"], 
+ ["GET_NEXT","5"]]
+
+Expected return value
+ ["", "", "", "", "", "", "", "1", "3", "true", "3", "", "", "", "", "2", "3", "5", "11"]
+
+ Your return value
+ ["", "", "", "", "", "", "", "1", "3", "true", "3", "", "", "", "", "2", "3", "5", "11"]
+
+Console output
+
+// adding this line code at the end for loop: fmt.Printf("stored numbers: %d\n",stored)
+stored numbers: [0]
+stored numbers: [0 1]
+stored numbers: [0 1 1]
+stored numbers: [0 1 1 11]
+stored numbers: [0 1 1 11 22]
+stored numbers: [0 1 1 11 22 3]
+stored numbers: [0 1 1 11 22 3 5]
+stored numbers: [0 1 1 11 22 3 5]
+stored numbers: [0 1 1 11 22 3 5]
+stored numbers: [0 1 11 22 3 5]
+stored numbers: [0 1 11 22 3 5]
+stored numbers: [0 1 11 22 3 5 0]
+stored numbers: [0 1 11 22 3 5 0 1]
+stored numbers: [0 1 11 22 3 5 0 1 2]
+stored numbers: [0 1 11 22 3 5 0 1 2 1]
+stored numbers: [0 1 11 22 3 5 0 1 2 1]
+stored numbers: [0 1 11 22 3 5 0 1 2 1]
+stored numbers: [0 1 11 22 3 5 0 1 2 1]
+stored numbers: [0 1 11 22 3 5 0 1 2 1]

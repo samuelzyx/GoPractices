@@ -1,0 +1,23 @@
+Test 4 (Passed)
+
+Input
+
+queries:
+[["ADD","1"], 
+ ["ADD","2"], 
+ ["ADD","2"], 
+ ["ADD","3"], 
+ ["EXISTS","1"], 
+ ["EXISTS","2"], 
+ ["EXISTS","3"], 
+ ["REMOVE","2"], 
+ ["REMOVE","1"], 
+ ["EXISTS","2"], 
+ ["EXISTS","1"]]
+
+Expected return value
+["", "", "", "", "true", "true", "true", "true", "true", "true", "false"]
+
+Your return value
+["", "", "", "", "true", "true", "true", "true", "true", "true", "false"]
+ 
