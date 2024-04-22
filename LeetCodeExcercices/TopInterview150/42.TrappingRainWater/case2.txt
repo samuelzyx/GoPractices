@@ -1,0 +1,51 @@
+Case 2
+
+Input
+height =[4,2,0,3,2,5]
+
+Output
+9
+
+Expected
+9
+
+Stdout
+peak:-1
+prevPeak:0
+
+h:4
+Line 16 (h>=peak):true (4>=-1)
+peak:4
+peakIndex:0
+Line 21 (prevPeak==0):true (0==0)
+prevPeak:0
+
+h:2
+Line 16 (h>=peak):false (2>=4)
+Line 38 ((prevPeak!=0) && (i!=n-1)):true (((4!=0) && (1!=6-1))
+possibleUnitWater:2
+
+h:0
+Line 16 (h>=peak):false (0>=4)
+Line 38 ((prevPeak!=0) && (i!=n-1)):true (((4!=0) && (2!=6-1))
+possibleUnitWater:6
+
+h:3
+Line 16 (h>=peak):false (3>=4)
+Line 38 ((prevPeak!=0) && (i!=n-1)):true (((4!=0) && (3!=6-1))
+possibleUnitWater:7
+
+h:2
+Line 16 (h>=peak):false (2>=4)
+Line 38 ((prevPeak!=0) && (i!=n-1)):true (((4!=0) && (4!=6-1))
+possibleUnitWater:9
+
+h:5
+Line 16 (h>=peak):true (5>=4)
+peak:5
+peakIndex:5
+Line 21 (prevPeak==0):false (4==0)
+Line 26 (prevPeak<=h):true (4<=5)
+unitWater:9
+possibleUnitWater:0
+prevPeak:5

@@ -1,0 +1,115 @@
+
+Case 1
+
+Input
+height = [0,1,0,2,1,0,1,3,2,1,2,1]
+
+Output
+6
+
+Expected
+6
+
+Stdout
+peak:-1
+prevPeak:0
+
+h:0
+Line 16 (h>=peak):true (0>=-1)
+peak:0
+peakIndex:0
+Line 21 (prevPeak==0):true (0==0)
+prevPeak:0
+
+h:1
+Line 16 (h>=peak):true (1>=0)
+peak:1
+peakIndex:1
+Line 21 (prevPeak==0):true (0==0)
+prevPeak:0
+
+h:0
+Line 16 (h>=peak):false (0>=1)
+Line 38 ((prevPeak!=0) && (i!=n-1)):true (((1!=0) && (2!=12-1))
+possibleUnitWater:1
+
+h:2
+Line 16 (h>=peak):true (2>=1)
+peak:2
+peakIndex:3
+Line 21 (prevPeak==0):false (1==0)
+Line 26 (prevPeak<=h):true (1<=2)
+unitWater:1
+possibleUnitWater:0
+prevPeak:2
+
+h:1
+Line 16 (h>=peak):false (1>=2)
+Line 38 ((prevPeak!=0) && (i!=n-1)):true (((2!=0) && (4!=12-1))
+possibleUnitWater:1
+
+h:0
+Line 16 (h>=peak):false (0>=2)
+Line 38 ((prevPeak!=0) && (i!=n-1)):true (((2!=0) && (5!=12-1))
+possibleUnitWater:3
+
+h:1
+Line 16 (h>=peak):false (1>=2)
+Line 38 ((prevPeak!=0) && (i!=n-1)):true (((2!=0) && (6!=12-1))
+possibleUnitWater:4
+
+h:3
+Line 16 (h>=peak):true (3>=2)
+peak:3
+peakIndex:7
+Line 21 (prevPeak==0):false (2==0)
+Line 26 (prevPeak<=h):true (2<=3)
+unitWater:5
+possibleUnitWater:0
+prevPeak:3
+
+h:2
+Line 16 (h>=peak):false (2>=3)
+Line 38 ((prevPeak!=0) && (i!=n-1)):true (((3!=0) && (8!=12-1))
+possibleUnitWater:1
+
+h:1
+Line 16 (h>=peak):false (1>=3)
+Line 38 ((prevPeak!=0) && (i!=n-1)):true (((3!=0) && (9!=12-1))
+possibleUnitWater:3
+
+h:2
+Line 16 (h>=peak):false (2>=3)
+Line 38 ((prevPeak!=0) && (i!=n-1)):true (((3!=0) && (10!=12-1))
+possibleUnitWater:4
+
+h:1
+Line 16 (h>=peak):false (1>=3)
+Line 38 ((prevPeak!=0) && (i!=n-1)):false (((3!=0) && (11!=12-1))
+Line 43 (possibleUnitWater != 0):true (4!=0)
+possibleUnitWater:0
+prevPeak:2
+i:8
+prevPeak:2
+peak:2
+/////////////////Reset
+
+h:1
+Line 16 (h>=peak):false (1>=2)
+Line 38 ((prevPeak!=0) && (i!=n-1)):true (((2!=0) && (9!=12-1))
+possibleUnitWater:1
+
+h:2
+Line 16 (h>=peak):true (2>=2)
+peak:2
+peakIndex:10
+Line 21 (prevPeak==0):false (2==0)
+Line 26 (prevPeak<=h):true (2<=2)
+unitWater:6
+possibleUnitWater:0
+prevPeak:2
+
+h:1
+Line 16 (h>=peak):false (1>=2)
+Line 38 ((prevPeak!=0) && (i!=n-1)):false (((2!=0) && (11!=12-1))
+Line 43 (possibleUnitWater != 0):false (0!=0)

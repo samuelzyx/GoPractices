@@ -1,0 +1,45 @@
+Input
+height = [4,2,3]
+
+Output
+0
+
+Expected
+1
+
+Stdout
+peak:-1
+prevPeak:0
+
+h:4
+Line 16 (h>=peak):true (4>=-1)
+peak:4
+peakIndex:0
+Line 21 (prevPeak==0):true (0==0)
+prevPeak:0
+
+h:2
+Line 16 (h>=peak):false (2>=4)
+Line 38 ((prevPeak!=0) && (i!=n-1)):true (((4!=0) && (1!=3-1))
+possibleUnitWater:2
+
+h:3
+Line 16 (h>=peak):false (3>=4)
+Line 38 ((prevPeak!=0) && (i!=n-1)):false (((4!=0) && (2!=3-1))
+Line 43 (possibleUnitWater != 0):true (2!=0)
+possibleUnitWater:0
+prevPeak:3
+i:1
+prevPeak:3
+peak:3
+/////////////////Reset
+
+h:3
+Line 16 (h>=peak):true (3>=3)
+peak:3
+peakIndex:2
+Line 21 (prevPeak==0):false (3==0)
+Line 26 (prevPeak<=h):true (3<=3)
+unitWater:0
+possibleUnitWater:0
+prevPeak:3
