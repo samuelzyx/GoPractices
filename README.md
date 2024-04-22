@@ -11,3 +11,4 @@ Contains:
 - LeetCodee Top Interview 150 Excercises
 - Udemy Excercises
 - Commun Excercises
+- Codesignal Excercises
