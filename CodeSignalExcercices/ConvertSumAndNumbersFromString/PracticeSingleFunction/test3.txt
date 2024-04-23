@@ -1,0 +1,10 @@
+Test 3
+
+Input 
+n: 10
+
+Expected return value
+1
+
+Your return value
+1

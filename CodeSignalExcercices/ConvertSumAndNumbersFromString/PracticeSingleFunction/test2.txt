@@ -1,0 +1,10 @@
+Test 2
+
+Input 
+n: 48
+
+Expected return value
+12
+
+Your return value
+12
