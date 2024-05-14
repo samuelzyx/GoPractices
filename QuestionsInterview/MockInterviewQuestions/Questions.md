@@ -1,7 +1,7 @@
 Tell me more about Golang?
 
 - Is a language it used normally by the easy to undertand of the sintaxis that use.
-- It's was desinged by Google en 2007.
+- It's was desinged by Google en 2009.
 - It's open source.
 - It's was based in C.
 - It's can handle concurrency with the GoRoutines, Channels, Wait Groups.
