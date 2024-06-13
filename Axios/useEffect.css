@@ -1,0 +1,59 @@
+/* styles.css */
+
+/* General container */
+.movie-container {
+    width: 80%; /* Adjust width as needed */
+    margin: 0 auto; /* Center the container horizontally */
+    padding: 20px; /* Add some padding around the content */
+    border: 1px solid #ccc; /* Optional: Add a subtle border */
+    border-radius: 5px; /* Optional: Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Subtle shadow */
+  }
+  
+  /* Movie list heading */
+  .movie-heading {
+    text-align: center; /* Center the heading text */
+    font-size: 24px; /* Adjust font size as needed */
+    font-weight: bold; /* Make the heading bold */
+    margin-bottom: 20px; /* Add some spacing below the heading */
+  }
+  
+  /* Loading message */
+  .loading-message {
+    text-align: center; /* Center the loading message */
+    font-size: 16px; /* Adjust font size as needed */
+    margin-bottom: 20px; /* Add some spacing below the message */
+  }
+  
+  /* Movie list */
+  .movie-list {
+    list-style: none; /* Remove default bullet points */
+    padding: 0; /* Reset default padding */
+    margin: 0; /* Reset default margins */
+  }
+  
+  /* Individual movie item */
+  .movie-item {
+    border-bottom: 1px solid #eee; /* Add a subtle divider between items */
+    padding: 15px; /* Add padding around the movie details */
+  }
+  
+  /* Movie title */
+  .movie-title {
+    font-size: 20px; /* Adjust font size as needed */
+    margin: 0; /* Remove default margin */
+    font-weight: bold; /* Make the title bold */
+  }
+  
+  /* Movie details */
+  .movie-average-rating,
+  .movie-plot {
+    margin-top: 5px; /* Add spacing between elements */
+    font-size: 16px; /* Adjust font size as needed */
+  }
+  
+  /* Average rating (optional styling) */
+  .movie-average-rating {
+    color: #f00; /* Red color for average rating */
+  }
+  
